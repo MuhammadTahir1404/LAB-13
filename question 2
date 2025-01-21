@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class DivisionGame {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Prompt user for input
+            System.out.print("Enter the first integer: ");
+            int num1 = scanner.nextInt();
+
+            System.out.print("Enter the second integer: ");
+            int num2 = scanner.nextInt();
+
+            // Perform division
+            int result = num1 / num2;
+            System.out.println("Result: " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic Exception: You cannot divide by zero!");
+        } catch (java.util.InputMismatchException e) {
+            System.out.println("Invalid input: Please enter integers only.");
+        } finally {
+            System.out.println("Thank you for playing the division game!");
+        }
+
+        scanner.close();
+    }
+}
